@@ -1,0 +1,11 @@
+sslVersion = SSLv3
+chroot = /var/lib/stunnel4/
+setuid = stunnel4
+setgid = stunnel4
+pid = /stunnel4.pid
+socket = l:TCP_NODELAY=1
+socket = r:TCP_NODELAY=1
+client = yes
+[smtp-tls-wrapper]
+accept  = <%= @port %>
+connect = email-smtp.<%= @region %>.amazonaws.com:465
